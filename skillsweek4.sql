@@ -2,24 +2,34 @@
 -- for the most explanatory version of each question.
 
 -- 1. Select all columns for all brands in the Brands table.
+SELECT * FROM brands;
 
 -- 2. Select all columns for all car models made by Pontiac in the Models table.
+SELECT * FROM models WHERE brand_name = 'Pontiac';
 
 -- 3. Select the brand name and model 
 --    name for all models made in 1964 from the Models table.
-
+SELECT brand_name, name FROM models WHERE year = '1964';
 
 -- 4. Select the model name, brand name, and headquarters for the Ford Mustang 
 --    from the Models and Brands tables.
-
+SELECT models.name, models.brand_name, brands.headquarters 
+FROM models 
+JOIN brands USING (id);
 -- 5. Select all rows for the three oldest brands 
 --    from the Brands table (Hint: you can use LIMIT and ORDER BY).
+SELECT * FROM brands ORDER BY founded DESC LIMIT 3;
 
 -- 6. Count the Ford models in the database (output should be a number).
+SELECT COUNT(*) FROM models WHERE brand_name = 'Ford';
 
 -- 7. Select the name of any and all car brands that are not discontinued.
+SELECT name FROM brands WHERE discontinued IS NULL;
 
 -- 8. Select rows 15-25 of the DB in alphabetical order by model name.
+SELECT * FROM models LIMIT 11 OFFSET 14;
+-- Wasn't sure if you wanted it ordered by id, so if that were the case
+--      I would do: SELECT * FROM models ORDER BY id LIMIT 11 OFFSET 14;
 
 -- 9. Select the brand, name, and year the model's brand was 
 --    founded for all of the models from 1960. Include row(s)
