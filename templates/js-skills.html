@@ -159,7 +159,15 @@
 </fieldset>
 
 <script>
-  // code here for above problem
+
+var dontSubmit =document.getElementById('prevent-form-submission-form');
+
+dontSubmit.addEventListener('submit', function(evt){
+  evt.preventDefault();
+  alert('This is just an alert...');
+  return false;
+}, false);
+
 </script>
 
 <div class="hint">
