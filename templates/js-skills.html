@@ -274,7 +274,7 @@ button.addEventListener('click',reverseString);
   $('img').click(cutePuppy);
 
   function cutePuppy() {
-    $('img').attr('src', 'http://cdn.abclocal.go.com/content/creativecontent/images/cms/432731_1280x720.jpg');
+    $('img').attr('src', 'http://cdn.abclocal.go.com/content/creativecontent/images/cms/432731_1280x720.jpg').attr('height',180).attr('width', 250);
   }
 </script>
 
@@ -308,7 +308,11 @@ button.addEventListener('click',reverseString);
 </fieldset>
 
 <script>
-  // put your code here
+  
+  $('#make-a-porcupine').click(function(){
+    $('#cute-porcupine-image').fadeIn(1000);
+  })
+
 </script>
 
 <div class="hint">
