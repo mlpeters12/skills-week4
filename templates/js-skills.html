@@ -200,20 +200,20 @@ dontSubmit.addEventListener('submit', justAnAlert);
 <script>
 //  Here's a stub of a function you can use!
 
-//  function reverseString() {
-//    var msg = "Porcupines are cute";
-//
-//    // do some stuff here to reverse that string into a new variable
-//    var newMsg = "This should be the reversed string";
-//
-//    alert(newMsg);
-//  }
+var button = document.getElementById('reverse-string-button');
 
-// Here's a stub of event stuff you could use
-//
+function reverseString() {
+  var msg = "Porcupines are cute";
 
-//  var button = document.getElementById('reverse-string-button');
-//  button.addEventListener('click', reverseString);
+   // do some stuff here to reverse that string into a new variable
+  var newMsg = msg.split("").reverse().join("");
+
+  alert(newMsg);
+}
+
+button.addEventListener('click',reverseString);
+
+
 </script>
 
 
@@ -236,8 +236,15 @@ dontSubmit.addEventListener('submit', justAnAlert);
   <input type="button" class="tricky-to-find" value="Pop-Up Please!">
 </fieldset>
 
+
+<script> src="https://code.jquery.com/jquery.js"></script>
 <script>
-  // code here for above problem
+
+  $('.tricky-to-find').click(function (evt) {
+    alert("Did you know this is an alert? Well, it is ya dummy.");
+    }
+  );
+
 </script>
 
 <div class="hint">
