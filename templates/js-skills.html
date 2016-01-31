@@ -162,11 +162,13 @@
 
 var dontSubmit =document.getElementById('prevent-form-submission-form');
 
-dontSubmit.addEventListener('submit', function(evt){
+function justAnAlert(evt){
   evt.preventDefault();
   alert('This is just an alert...');
   return false;
-}, false);
+}
+
+dontSubmit.addEventListener('submit', justAnAlert, false);
 
 </script>
 
